@@ -1,0 +1,196 @@
+---
+title: Introducción a la Programación Competitiva
+description: Todo lo que necesitas saber para empezar en programación competitiva desde cero
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Qué es la programación competitiva
+
+La programación competitiva es resolver problemas algorítmicos bajo presión de tiempo. Te dan un problema, tenés que pensar la solución, programarla y que pase todos los casos de prueba.
+
+Es como un examen de matemática, pero con código. Y es adictivo.
+
+## Por qué vale la pena
+
+No es solo para ganar medallas (aunque está bueno). La programación competitiva te enseña:
+
+- **Pensar rápido** bajo presión
+- **Resolver problemas** de forma sistemática  
+- **Escribir código limpio** que funcione al primer intento
+- **Optimizar algoritmos** para casos extremos
+- **Debuggear rápido** cuando algo no anda
+
+Todo esto te sirve para entrevistas técnicas, proyectos personales y trabajo real.
+
+## Configurando tu entorno
+
+### Editor y compilador
+
+Necesitás algo rápido y confiable. Las opciones más populares:
+
+**C++** (recomendado para empezar):
+```bash
+# En Linux/Mac
+g++ -o solution solution.cpp -std=c++17 -O2
+
+# En Windows con MinGW
+g++ -o solution.exe solution.cpp -std=c++17 -O2
+```
+
+**Python** (más lento, pero más fácil):
+```bash
+python solution.py
+```
+
+**Java** (verboso, pero poderoso):
+```bash
+javac Solution.java
+java Solution
+```
+
+### Template básico en C++
+
+Este template te va a ahorrar tiempo en cada problema:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    // Tu código acá
+    
+    return 0;
+}
+```
+
+**Qué hace cada línea:**
+- `#include <bits/stdc++.h>`: Incluye todas las librerías (solo funciona en GCC)
+- `using namespace std;`: No tenés que escribir `std::` todo el tiempo
+- `ios_base::sync_with_stdio(false);`: Hace que `cin` y `cout` sean más rápidos
+- `cin.tie(NULL);`: Optimización adicional para entrada/salida
+
+## Tu primer problema
+
+Vamos con algo simple. En la mayoría de plataformas, el primer problema es leer dos números y sumarlos.
+
+**Problema:**
+```
+Dados dos enteros A y B, imprimí A + B.
+
+Entrada:
+3 5
+
+Salida:
+8
+```
+
+**Solución:**
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int a, b;
+    cin >> a >> b;
+    cout << a + b << endl;
+    
+    return 0;
+}
+```
+
+Simple, ¿no? Pero fijate los detalles:
+- Leemos con `cin`, no con `scanf`
+- Imprimimos con `cout`, no con `printf`
+- Usamos `endl` para salto de línea (aunque `\n` es más rápido)
+
+## Plataformas para practicar
+
+<CardGrid>
+	<Card title="Codeforces" icon="star">
+		**La más popular del mundo**
+		
+		- Contests regulares
+		- Editorial de todos los problemas
+		- Sistema de rating como ajedrez
+		
+		[codeforces.com](https://codeforces.com)
+	</Card>
+	
+	<Card title="AtCoder" icon="puzzle">
+		**Excelente para principiantes**
+		
+		- Problemas muy bien explicados
+		- Contests semanales
+		- Dificultad progresiva
+		
+		[atcoder.jp](https://atcoder.jp)
+	</Card>
+	
+	<Card title="LeetCode" icon="laptop">
+		**Para entrevistas técnicas**
+		
+		- Problemas orientados a trabajo
+		- Explicaciones detalladas
+		- Mock interviews
+		
+		[leetcode.com](https://leetcode.com)
+	</Card>
+</CardGrid>
+
+## Cómo estudiar
+
+### 1. Entendé el problema
+Antes de programar, asegurate de entender qué te piden. Leé los ejemplos, pensá casos borde.
+
+### 2. Pensá la solución
+No vayas directo a programar. Pensá el algoritmo primero. Escribilo en papel si hace falta.
+
+### 3. Implementá
+Programá de forma limpia. Usá nombres de variables claros, comentá lo importante.
+
+### 4. Probá
+Probá tu código con los ejemplos del problema. Pensá en casos que podrían fallar.
+
+### 5. Enviá y aprendé
+Si pasa, genial. Si no pasa, leé el error, pensá qué puede estar mal, arreglalo.
+
+## Errores comunes
+
+**Integer overflow**: Usá `long long` cuando los números sean grandes
+```cpp
+long long a = 1000000000;
+long long b = 1000000000;
+cout << a * b << endl;  // Con int, esto da mal
+```
+
+**Array bounds**: No te pases del tamaño del array
+```cpp
+int arr[100];
+// arr[100] es inválido, el último índice es 99
+```
+
+**Wrong output format**: Leé bien qué formato de salida esperan
+```cpp
+// Si piden "Case 1: 42", no imprimas solo "42"
+cout << "Case " << i << ": " << result << endl;
+```
+
+## Próximos pasos
+
+Ahora que tenés lo básico configurado:
+
+1. **Registrate** en Codeforces y AtCoder
+2. **Resolvé** algunos problemas de dificultad 800-900 en Codeforces
+3. **Participá** en un contest para ver qué se siente
+4. **Practicá** problemas básicos hasta sentirte cómodo con la sintaxis
+
+La clave es práctica constante. Mejor 30 minutos por día que 5 horas una vez por semana.
+
+¡Éxito!

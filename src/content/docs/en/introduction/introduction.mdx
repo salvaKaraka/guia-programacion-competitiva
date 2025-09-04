@@ -1,0 +1,196 @@
+---
+title: Introduction to Competitive Programming
+description: Everything you need to know to get started in competitive programming from scratch
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## What is competitive programming
+
+Competitive programming is solving algorithmic problems under time pressure. You get a problem, need to think of the solution, code it up, and make it pass all test cases.
+
+It's like a math exam, but with code. And it's addictive.
+
+## Why it's worth it
+
+It's not just about winning medals (though that's nice). Competitive programming teaches you:
+
+- **Think fast** under pressure
+- **Solve problems** systematically  
+- **Write clean code** that works on the first try
+- **Optimize algorithms** for edge cases
+- **Debug quickly** when something breaks
+
+All of this helps with technical interviews, personal projects, and real work.
+
+## Setting up your environment
+
+### Editor and compiler
+
+You need something fast and reliable. Most popular options:
+
+**C++** (recommended for beginners):
+```bash
+# On Linux/Mac
+g++ -o solution solution.cpp -std=c++17 -O2
+
+# On Windows with MinGW
+g++ -o solution.exe solution.cpp -std=c++17 -O2
+```
+
+**Python** (slower, but easier):
+```bash
+python solution.py
+```
+
+**Java** (verbose, but powerful):
+```bash
+javac Solution.java
+java Solution
+```
+
+### Basic C++ template
+
+This template will save you time on every problem:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    // Your code here
+    
+    return 0;
+}
+```
+
+**What each line does:**
+- `#include <bits/stdc++.h>`: Includes all libraries (only works with GCC)
+- `using namespace std;`: You don't have to write `std::` all the time
+- `ios_base::sync_with_stdio(false);`: Makes `cin` and `cout` faster
+- `cin.tie(NULL);`: Additional optimization for input/output
+
+## Your first problem
+
+Let's start with something simple. On most platforms, the first problem is reading two numbers and adding them.
+
+**Problem:**
+```
+Given two integers A and B, print A + B.
+
+Input:
+3 5
+
+Output:
+8
+```
+
+**Solution:**
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int a, b;
+    cin >> a >> b;
+    cout << a + b << endl;
+    
+    return 0;
+}
+```
+
+Simple, right? But notice the details:
+- We read with `cin`, not `scanf`
+- We print with `cout`, not `printf`
+- We use `endl` for newline (though `\n` is faster)
+
+## Platforms to practice
+
+<CardGrid>
+	<Card title="Codeforces" icon="star">
+		**Most popular worldwide**
+		
+		- Regular contests
+		- Editorials for all problems
+		- Rating system like chess
+		
+		[codeforces.com](https://codeforces.com)
+	</Card>
+	
+	<Card title="AtCoder" icon="puzzle">
+		**Excellent for beginners**
+		
+		- Very well explained problems
+		- Weekly contests
+		- Progressive difficulty
+		
+		[atcoder.jp](https://atcoder.jp)
+	</Card>
+	
+	<Card title="LeetCode" icon="laptop">
+		**For technical interviews**
+		
+		- Work-oriented problems
+		- Detailed explanations
+		- Mock interviews
+		
+		[leetcode.com](https://leetcode.com)
+	</Card>
+</CardGrid>
+
+## How to study
+
+### 1. Understand the problem
+Before coding, make sure you understand what they're asking. Read the examples, think about edge cases.
+
+### 2. Think of the solution
+Don't jump straight to coding. Think about the algorithm first. Write it on paper if needed.
+
+### 3. Implement
+Code cleanly. Use clear variable names, comment important parts.
+
+### 4. Test
+Test your code with the problem examples. Think about cases that might fail.
+
+### 5. Submit and learn
+If it passes, great. If not, read the error, think about what could be wrong, fix it.
+
+## Common mistakes
+
+**Integer overflow**: Use `long long` when numbers are large
+```cpp
+long long a = 1000000000;
+long long b = 1000000000;
+cout << a * b << endl;  // With int, this gives wrong result
+```
+
+**Array bounds**: Don't exceed array size
+```cpp
+int arr[100];
+// arr[100] is invalid, last valid index is 99
+```
+
+**Wrong output format**: Read carefully what output format they expect
+```cpp
+// If they want "Case 1: 42", don't just print "42"
+cout << "Case " << i << ": " << result << endl;
+```
+
+## Next steps
+
+Now that you have the basics set up:
+
+1. **Sign up** on Codeforces and AtCoder
+2. **Solve** some problems of difficulty 800-900 on Codeforces
+3. **Participate** in a contest to see what it feels like
+4. **Practice** basic problems until you're comfortable with the syntax
+
+The key is consistent practice. Better 30 minutes a day than 5 hours once a week.
+
+Good luck!
